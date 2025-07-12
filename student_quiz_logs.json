@@ -1,0 +1,51 @@
+[
+  {
+    "student_name": "User",
+    "student_id": "817452c6-827d-4b8c-a415-8ee6078a3e69",
+    "subject": "Physics",
+    "timestamp": "2025-07-12T18:21:55.062955",
+    "marks": 10,
+    "questions": [
+      {
+        "question": "What are the different types of friction?",
+        "answer": "static, kinetic, rolling. 7"
+      },
+      {
+        "question": "What does Newton's Second Law mean?",
+        "answer": "The rate of change of momentum is directly proportional to the applied force"
+      },
+      {
+        "question": "What does Newtons Second Law mean?",
+        "answer": "The rate of change of momentum is directly proportional to the applied force"
+      },
+      {
+        "question": "What is Newtons Second Law?",
+        "answer": "The rate of change of momentum is directly proportional to the applied force"
+      },
+      {
+        "question": "What is Newton's Second Law?",
+        "answer": "The rate of change of momentum is directly proportional to the applied force"
+      },
+      {
+        "question": "What is the definition of Newtons Second Law?",
+        "answer": "The rate of change of momentum is directly proportional to the applied force"
+      },
+      {
+        "question": "What is the name of Newtons Second Law?",
+        "answer": "Define Newtons Second Law"
+      },
+      {
+        "question": "What is the first law of Newton?",
+        "answer": "A body remains in a state of rest or uniform motion"
+      },
+      {
+        "question": "What is Newtons second law?",
+        "answer": "The rate of change of momentum is directly proportional to the applied force"
+      },
+      {
+        "question": "What is the name of the law that describes friction?",
+        "answer": "Define Newtons Second Law"
+      }
+    ]
+  }
+]
