@@ -1,70 +1,93 @@
-# Getting Started with Create React App
+# 🧠 QuizForge
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+**QuizForge** is an AI-powered quiz generator built using Flask (backend) and React (frontend). Upload notes or scanned PDFs/images, and QuizForge will generate high-quality quiz questions using machine learning models — ideal for **students** and **teachers**.
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+## 🚀 Features
 
-### `npm start`
+- ✍️ Upload PDF or image files (notes, books, etc.)
+- 🧠 Automatically generates quiz questions using AI
+- 📸 OCR support using Tesseract for scanned documents
+- 🔐 Student & Teacher login with role-based dashboards
+- ✅ Instant quiz evaluation and scoring
+- 🏆 Leaderboard by subject
+- 🎨 Clean, responsive UI with dark background
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+---
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## 📦 Tech Stack
 
-### `npm test`
+| Layer     | Technology                                      |
+|-----------|--------------------------------------------------|
+| Frontend  | React.js, HTML/CSS                              |
+| Backend   | Flask, Python, Transformers (HuggingFace)       |
+| AI Models | `lmqg/t5-base-squad-qg-ae`, `distilbert-base-cased-distilled-squad` |
+| OCR       | Tesseract OCR                                   |
+| Storage   | Local JSON (prototype stage)                    |
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+---
 
-### `npm run build`
+## 🔧 Installation
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### 1. Clone the repository
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+```bash
+git clone https://github.com/Unknown-Mystic/Quiz_Forge.git
+cd Quiz_Forge
+2️⃣ Set Up Python Virtual Environment (Backend)
+bash
+Copy
+Edit
+python -m venv venv
+venv\Scripts\activate           # For Windows
+# OR
+source venv/bin/activate        # For macOS/Linux
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+pip install -r requirements.txt
+3️⃣ (Optional) Download the Question Generation Model
+Only required if models/lmqg_t5_qg_ae_model/ folder is not present.
 
-### `npm run eject`
+Create and run a file named download_model.py with this code:
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+python
+Copy
+Edit
+from transformers import AutoTokenizer, AutoModelForSeq2SeqLM
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+model_name = "lmqg/t5-base-squad-qg-ae"
+tokenizer = AutoTokenizer.from_pretrained(model_name)
+model = AutoModelForSeq2SeqLM.from_pretrained(model_name)
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+local_path = "models/lmqg_t5_qg_ae_model"
+tokenizer.save_pretrained(local_path)
+model.save_pretrained(local_path)
+✅ Your folder structure should now look like:
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+arduino
+Copy
+Edit
+models/
+└── lmqg_t5_qg_ae_model/
+    ├── config.json
+    ├── tokenizer_config.json
+    ├── pytorch_model.bin
+    └── ...
+4️⃣ Start the Flask Backend Server
+bash
+Copy
+Edit
+python app.py
+This will start the backend server at:
 
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+cpp
+Copy
+Edit
+http://127.0.0.1:5000
+5️⃣ Start the React Frontend
+bash
+Copy
+Edit
+cd src
+npm install
+npm start
