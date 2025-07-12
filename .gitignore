@@ -1,23 +1,44 @@
-# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
-
-# dependencies
+# React dependencies
 /node_modules
 /.pnp
 .pnp.js
 
-# testing
+# React testing & build
 /coverage
-
-# production
 /build
 
-# misc
+# Logs & system files
 .DS_Store
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# React environment variables
 .env.local
 .env.development.local
 .env.test.local
 .env.production.local
 
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
+# Python virtual environments
+venv/
+env/
+
+# Python cache & compiled files
+__pycache__/
+*.py[cod]
+*.so
+*.log
+
+# Flask-related
+instance/
+*.env
+*.db
+*.sqlite3
+
+# Model files
+*.pt
+*.bin
+*.h5
+models/*
+!models/lmqg_t5_qg_ae_model/
+
